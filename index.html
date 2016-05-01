@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			body{margin:0;padding:0;font-size:12px;}
+			fieldset{border:none;}
+			#search{position:absolute;top:41px;left:20px;z-index:15;width:611px}
+			#search form{margin-bottom:9px}
+			#search .green_window{display:-moz-inline-block;display:-moz-inline-box;display:inline-block;width:358px;_width /**/:372px;height:26px;_height /**/:40px;margin-right:5px;border:7px solid #2db400;background-color:#fff}
+			#search .input_text{width:323px;height:17px;margin:3px 0 0 6px;border:0;line-height:18px;font-weight:bold;font-size:1.17em;color:#000;*ime-mode:active;outline:none}
+			.reatcmp{position:absolute;top:38px;left:16px;z-index:100;	width: 360px;display: block;background-color: rgb(255, 255, 255);border: 1px solid #888d95;border-top: none;color: #666;zoom: 1;}
+			.reatcmp a{display:block;padding:5px 10px;margin:0;text-decoration:none;color:#333;}
+			.reatcmp a:hover,.reatcmp a:focus,.reatcmp a.on{background:#eee;}
+			.reatcmp a strong{color:#eb0c00}
+		</style>
+	</head>
+	<body>
+		<div id="search">
+			<form>
+				<fieldset>
+				<span class="green_window">
+					<input id="input_text" class="input_text" style="ime-mode:active;" autocomplete="off" >
+				</span>
+			</fieldset>
+			</form>
+			<div class="reatcmp" id="result" style="display: block;">
+
+			</div>
+		</div>
+		<script src="static/vendor/jquery/dist/jquery.min.js"></script>
+		<script src="static/hunyong.song-1.0.0.js"></script>
+		<script>
+			var view = new nts.view.autoCompleteView();
+			var model = new nts.model.autoCompleteModel();
+			var controller = new nts.controller.autoCompleteController(model, view);
+		</script>
+	</body>
+</html>

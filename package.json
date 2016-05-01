@@ -1,0 +1,25 @@
+{
+  "name": "hunyong.song",
+  "version": "1.0.0",
+  "description": "day9",
+  "main": "index.html",
+  "scripts": {
+    "postinstall": "bower install && npm run build",
+    "build": "grunt"
+  },
+  "author": "hunyong.song@nhn.com",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-jsdoc": "^1.1.0",
+    "grunt-jslint": "^1.1.14",
+    "jaguarjs-jsdoc": "0.0.1"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0"
+  }
+}

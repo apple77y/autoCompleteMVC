@@ -1,0 +1,13 @@
+{
+  "name": "hunyong.song",
+  "description": "day9",
+  "main": "index.html",
+  "authors": [
+    "hunyong.song@nhn.com"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
