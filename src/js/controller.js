@@ -55,8 +55,7 @@ nts.controller.autoComplete.prototype = {
             keyCode = e.keyCode;
 
         if (keyword !== this._model.getKeyword()) {
-            this._model.setKeyword(keyword);
-            this._model.callData();
+            this._model.keyword = keyword;
             this._dao.callData();
         }
 
@@ -82,6 +81,6 @@ nts.controller.autoComplete.prototype = {
      * @private
      */
     _onUpdateModel: function () {
-        this._view.render(this._model.getData(), this._model.getKeyword());
+        this._view.render(this._model.data, this._model.keyword);
     }
 };
