@@ -46,7 +46,7 @@ nts.controller.autoComplete.prototype = {
 
     /**
      * 키워드가 입력 되었을 때 실행
-     * @param {Event} e 이벤트 객체
+     * @param {event} e 이벤트 객체
      * @private
      */
     _onKeyupChange: function (e) {
