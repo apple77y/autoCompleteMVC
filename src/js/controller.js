@@ -14,6 +14,7 @@ nts.controller.autoCompleteController = function (model, view) {
 
     me._model = model;
     me._view = view;
+    me._dao = new nts.dao(model);
 
     me._bindViewActions();
     me._bindModelEvents();
@@ -52,6 +53,7 @@ nts.controller.autoCompleteController.prototype = {
         if (keyword !== this._model.getKeyword()) {
             this._model.setKeyword(keyword);
             this._model.callData();
+            this._dao.callData();
         }
 
         this._view.changeIndex(keyCode);

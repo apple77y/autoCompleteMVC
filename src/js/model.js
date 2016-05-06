@@ -76,41 +76,5 @@ nts.model.autoCompleteModel.prototype = {
      */
     setKeyword: function (keyword) {
         this._keyword = keyword;
-    },
-
-    /**
-     * ajax로 검색 결과를 받아옴
-     * @returns {function} _successHandler 성공일 때 실행 함수
-     * @returns {function} _failureHandler 실패일 때 실행 함수
-     * @public
-     */
-    callData: function () {
-        $.ajax({
-            // 보안 이슈로 삭제
-        })
-        .done($.proxy(this._successHandler, this))
-        .fail(this._failureHandler);
-    },
-
-    /**
-     * ajax가 성공적으로 끝났을 때
-     * @param {array} result 검색 결과
-     * @private
-     */
-    _successHandler: function (result) {
-        this.setData(result);
-    },
-
-    /**
-     * ajax가 실패로 끝났을 때
-     * @param err 에러 메세지
-     * @returns {boolean}
-     * @private
-     */
-    _failureHandler: function (err) {
-        if (err) {
-            window.alert('에러가 발생했습니다.');
-            return false;
-        }
     }
 };
