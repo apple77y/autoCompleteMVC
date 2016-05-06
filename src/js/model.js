@@ -41,23 +41,20 @@ nts.model.autoCompleteModel.prototype = {
 
     /**
      * 검색 결과를 리턴
-     * @returns {array} searchResult 검색 결과
+     * @returns {Array} data 검색 결과
      * @public
      */
-    getData: function () {
-        var searchResult = this._data.items[0];
-
-        return searchResult;
+    get data() {
+        return this._data;
     },
 
     /**
      * ajax로 받아온 검색 결과를 저장 후 update 이벤트를 실행
-     * @param {array} result 검색 결과
+     * @param {Object} result 검색 결과
      * @public
      */
-    setData: function (result) {
-        this._data = result;
-
+    set data(result) {
+        this._data = result.items[0];
         this.dispatchEvent('update');
     },
 
@@ -66,7 +63,7 @@ nts.model.autoCompleteModel.prototype = {
      * @returns {string} keyword 키워드
      * @public
      */
-    getKeyword: function () {
+    get keyword() {
         return this._keyword;
     },
 
@@ -75,7 +72,7 @@ nts.model.autoCompleteModel.prototype = {
      * @param {string} keyword 키워드
      * @public
      */
-    setKeyword: function (keyword) {
+    set keyword(keyword) {
         this._keyword = keyword;
     }
 };
