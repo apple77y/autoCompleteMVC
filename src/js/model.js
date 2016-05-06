@@ -1,16 +1,15 @@
 /**
  * 검색 결과 모델
- * @returns {nts.model.autoCompleteModel}
+ * @returns {nts.model.autoComplete}
  * @constructor
  */
-nts.model.autoCompleteModel = function () {
+nts.model.autoComplete = function () {
     var me = this;
 
-    if (!(me instanceof nts.model.autoCompleteModel)) {
-        return new nts.model.autoCompleteModel();
+    if (!(me instanceof nts.model.autoComplete)) {
+        return new nts.model.autoComplete();
     }
 
-    me._eventHandler = $({});
     me._observer = new nts.observer();
     me._data = [];
     me._keyword = '';
@@ -18,11 +17,14 @@ nts.model.autoCompleteModel = function () {
     return me;
 };
 
-nts.model.autoCompleteModel.prototype = {
+/**
+ * 모델 객체 프로토타입
+ */
+nts.model.autoComplete.prototype = {
 
     /**
      * 이벤를 등록
-     * @param {Event} event 이벤트 객체
+     * @param {string} event 이벤트 객체
      * @param {function} callback 콜백 함수
      * @public
      */
@@ -32,7 +34,7 @@ nts.model.autoCompleteModel.prototype = {
 
     /**
      * 등록된 이벤트를 실행
-     * @param {Event} event 이벤트 객체
+     * @param {string} event 이벤트 객체
      * @public
      */
     dispatchEvent: function (event) {
@@ -41,23 +43,20 @@ nts.model.autoCompleteModel.prototype = {
 
     /**
      * 검색 결과를 리턴
-     * @returns {array} searchResult 검색 결과
+     * @returns {Array} data 검색 결과
      * @public
      */
-    getData: function () {
-        var searchResult = this._data.items[0];
-
-        return searchResult;
+    get data() {
+        return this._data;
     },
 
     /**
      * ajax로 받아온 검색 결과를 저장 후 update 이벤트를 실행
-     * @param {array} result 검색 결과
+     * @param {Object} result 검색 결과
      * @public
      */
-    setData: function (result) {
-        this._data = result;
-
+    set data(result) {
+        this._data = result.items[0];
         this.dispatchEvent('update');
     },
 
@@ -66,7 +65,7 @@ nts.model.autoCompleteModel.prototype = {
      * @returns {string} keyword 키워드
      * @public
      */
-    getKeyword: function () {
+    get keyword() {
         return this._keyword;
     },
 
@@ -75,7 +74,7 @@ nts.model.autoCompleteModel.prototype = {
      * @param {string} keyword 키워드
      * @public
      */
-    setKeyword: function (keyword) {
+    set keyword(keyword) {
         this._keyword = keyword;
     }
 };
