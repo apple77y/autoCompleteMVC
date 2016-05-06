@@ -54,12 +54,14 @@ nts.controller.autoComplete.prototype = {
         var keyword = e.target.value,
             keyCode = e.keyCode;
 
-        if (keyword !== this._model.getKeyword()) {
+        if (keyword !== this._model.keyword && keyCode !== 38 && keyCode !== 40) {
             this._model.keyword = keyword;
             this._dao.callData();
         }
-
         this._view.changeIndex(keyCode);
+        this._view.changeKeyword(keyCode);
+    },
+
     /**
      * form 패널에 있는 submit 이벤트 활성화
      * @private

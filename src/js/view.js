@@ -36,6 +36,21 @@ nts.view.autoComplete.prototype = {
      */
     _assignElements: function () {
         this._inputBox = $('.input_text');
+        this._form = $('form');
+    },
+
+    /**
+     * 방향키에 따라 키워드 바꿈
+     * @param keyCode
+     * @returns {boolean}
+     */
+    changeKeyword: function (keyCode) {
+        var $anchors = $('#result a');
+
+        if (keyCode === 40 || keyCode === 38) {
+            this._inputBox.val($($anchors[this._index]).text());
+            return false;
+        }
     },
 
     /**
