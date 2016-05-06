@@ -1,16 +1,15 @@
 /**
  * 검색 결과 모델
- * @returns {nts.model.autoCompleteModel}
+ * @returns {nts.model.autoComplete}
  * @constructor
  */
-nts.model.autoCompleteModel = function () {
+nts.model.autoComplete = function () {
     var me = this;
 
-    if (!(me instanceof nts.model.autoCompleteModel)) {
-        return new nts.model.autoCompleteModel();
+    if (!(me instanceof nts.model.autoComplete)) {
+        return new nts.model.autoComplete();
     }
 
-    me._eventHandler = $({});
     me._observer = new nts.observer();
     me._data = [];
     me._keyword = '';
@@ -18,11 +17,14 @@ nts.model.autoCompleteModel = function () {
     return me;
 };
 
-nts.model.autoCompleteModel.prototype = {
+/**
+ * 모델 객체 프로토타입
+ */
+nts.model.autoComplete.prototype = {
 
     /**
      * 이벤를 등록
-     * @param {Event} event 이벤트 객체
+     * @param {string} event 이벤트 객체
      * @param {function} callback 콜백 함수
      * @public
      */
@@ -32,7 +34,7 @@ nts.model.autoCompleteModel.prototype = {
 
     /**
      * 등록된 이벤트를 실행
-     * @param {Event} event 이벤트 객체
+     * @param {string} event 이벤트 객체
      * @public
      */
     dispatchEvent: function (event) {
