@@ -26,12 +26,11 @@ nts.dao.prototype = {
      */
     callData: function () {
         $.ajax({
-                url: 'http://ac.search.naver.com/nx/ac',
+                // jsonp 관련 보안이슈로 삭제
                 data: {
                     q: this._model.keyword,
                     st: '100'
                 },
-                jsonp: '_callback',
                 dataType: 'jsonp'
             })
             .done($.proxy(this._successHandler, this))
