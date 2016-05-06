@@ -34,6 +34,7 @@ nts.controller.autoComplete.prototype = {
     _bindViewActions: function () {
         this._view._inputBox.on('keyup', this._onKeyupChange.bind(this));
         this._view._inputBox.on('click', this._onClickChange.bind(this));
+        this._view._form.on('submit', this._onSubmit.bind(this));
     },
 
     /**
@@ -60,6 +61,12 @@ nts.controller.autoComplete.prototype = {
         }
 
         this._view.changeIndex(keyCode);
+    /**
+     * form 패널에 있는 submit 이벤트 활성화
+     * @private
+     */
+    _onSubmit: function () {
+        this._view._enterKeyEvent();
     },
 
     /**

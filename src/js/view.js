@@ -98,6 +98,16 @@ nts.view.autoComplete.prototype = {
     },
 
     /**
+     * 엔터 키를 눌렀을 때
+     * @private
+     */
+    _enterKeyEvent: function () {
+        var $anchors = $('#result a');
+
+        this._inputBox.val($($anchors[this._index]).text());
+    },
+
+    /**
      * 템플릿에 해당되는 데이터를 넣음
      * @param {Array} data 검색 결과
      * @param {string} keyword 검색 키워드
