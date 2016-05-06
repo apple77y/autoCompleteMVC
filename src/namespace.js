@@ -9,5 +9,6 @@ var nts = window.nts || {
         view: {},
         controller: {},
         dao: {},
+        observer: {},
         template: {}
     };

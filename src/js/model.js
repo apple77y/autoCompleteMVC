@@ -11,6 +11,7 @@ nts.model.autoCompleteModel = function () {
     }
 
     me._eventHandler = $({});
+    me._observer = new nts.observer();
     me._data = [];
     me._keyword = '';
 
@@ -26,7 +27,7 @@ nts.model.autoCompleteModel.prototype = {
      * @public
      */
     addEventListener: function (event, callback) {
-        this._eventHandler.on(event, callback);
+        this._observer.subscribe(event, callback);
     },
 
     /**
@@ -35,7 +36,7 @@ nts.model.autoCompleteModel.prototype = {
      * @public
      */
     dispatchEvent: function (event) {
-        this._eventHandler.trigger(event);
+        this._observer.publish(event);
     },
 
     /**
