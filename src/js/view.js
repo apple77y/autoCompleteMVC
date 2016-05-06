@@ -27,7 +27,7 @@ nts.view.autoComplete.prototype = {
      * @private
      */
     _insertTemplate: function () {
-        this._tmplStore = nts.template.autoCompleteTemplate;
+        this._tmplStore = nts.template.autoComplete;
     },
 
     /**
