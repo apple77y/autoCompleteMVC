@@ -1,15 +1,15 @@
 /**
  * 검색 결과 컨트롤러
- * @param {object} model 모델 객체
- * @param {object} view 뷰 객체
- * @returns {nts.controller.autoCompleteController}
+ * @param {Object} model 모델 객체
+ * @param {Object} view 뷰 객체
+ * @returns {nts.controller.autoComplete}
  * @constructor
  */
-nts.controller.autoCompleteController = function (model, view) {
+nts.controller.autoComplete = function (model, view) {
     var me = this;
 
-    if (!(me instanceof nts.controller.autoCompleteController)) {
-        return new nts.controller.autoCompleteController(model, view);
+    if (!(me instanceof nts.controller.autoComplete)) {
+        return new nts.controller.autoComplete(model, view);
     }
 
     me._model = model;
@@ -22,7 +22,10 @@ nts.controller.autoCompleteController = function (model, view) {
     return me;
 };
 
-nts.controller.autoCompleteController.prototype = {
+/**
+ * 컨트롤러 객체 프로토타입
+ */
+nts.controller.autoComplete.prototype = {
 
     /**
      * 뷰 엘리먼트에 이벤트를 연결
