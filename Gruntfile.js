@@ -11,16 +11,13 @@ module.exports = function(grunt) {
                 tasks: ['default']
             }
         },
-        jslint: {
-            dist: {
-                src: ['src/**/*.js'],
-                directives: {
-                    nomen: true,
-                    sloppy: true,
-                    white: true,
-                    browser: true,
-                    predef: ['nts', '$']
-                }
+        jshint: {
+            all: [
+                'src/js/*.js'
+            ],
+            options: {
+                reporter: require('jshint-stylish'),
+                jshintrc: '.jshintrc'
             }
         },
         clean: {
@@ -64,7 +61,7 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-jslint');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jsdoc');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -72,6 +69,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', [
-        'jslint', 'jsdoc', 'clean', 'concat', 'uglify'
+        'jshint', 'jsdoc', 'clean', 'concat', 'uglify'
     ]);
 };

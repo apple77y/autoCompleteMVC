@@ -12,11 +12,12 @@
   "devDependencies": {
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-jsdoc": "^1.1.0",
-    "grunt-jslint": "^1.1.14",
-    "jaguarjs-jsdoc": "0.0.1"
+    "jaguarjs-jsdoc": "0.0.1",
+    "jshint-stylish": "^2.2.0"
   },
   "dependencies": {
     "grunt": "^1.0.1",
