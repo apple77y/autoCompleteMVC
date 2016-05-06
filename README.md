@@ -11,7 +11,7 @@ $ npm install = bower install && npm run build(grunt)
 * Grunt tasks
 
 ```
-* jslint
+* jshint
 * jsdoc
 * clean
 * concat
