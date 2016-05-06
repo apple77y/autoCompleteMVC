@@ -1,13 +1,13 @@
 /**
  * 검색 결과 뷰
- * @returns {nts.view.autoCompleteView}
+ * @returns {nts.view.autoComplete}
  * @constructor
  */
-nts.view.autoCompleteView = function () {
+nts.view.autoComplete = function () {
     var me = this;
 
-    if (!(me instanceof nts.view.autoCompleteView)) {
-        return new nts.view.autoCompleteView();
+    if (!(me instanceof nts.view.autoComplete)) {
+        return new nts.view.autoComplete();
     }
 
     me.initSearchList();
@@ -17,7 +17,10 @@ nts.view.autoCompleteView = function () {
     return me;
 };
 
-nts.view.autoCompleteView.prototype = {
+/**
+ * 뷰 객체 프로토타입
+ */
+nts.view.autoComplete.prototype = {
 
     /**
      * 템플릿을 내부함수에 저장
@@ -96,7 +99,7 @@ nts.view.autoCompleteView.prototype = {
 
     /**
      * 템플릿에 해당되는 데이터를 넣음
-     * @param {array} data 검색 결과
+     * @param {Array} data 검색 결과
      * @param {string} keyword 검색 키워드
      * @returns {DocumentFragment}
      * @private
@@ -123,7 +126,7 @@ nts.view.autoCompleteView.prototype = {
 
     /**
      * 컨트롤러에서 받은 데이터를 바탕으로 화면을 그림
-     * @param {array} data 검색 결과
+     * @param {Array} data 검색 결과
      * @param {string} keyword 검색 키워드
      * @public
      */
