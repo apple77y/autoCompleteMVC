@@ -31,3 +31,10 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# Bower library
+static/vendor/
+
+
+# Map file
+static/*.map
